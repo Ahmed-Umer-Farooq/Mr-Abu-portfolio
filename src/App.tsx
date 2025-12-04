@@ -65,7 +65,7 @@ const App = React.memo(() => {
           <div className="flex items-center justify-between h-16">
             {/* Left: Logo */}
             <div className="flex items-center gap-3 min-w-[140px]">
-              <img src={profileImg} alt="MR ABU" className="w-9 h-9 rounded-full border-2 border-primary/50" />
+              <img src={profileImg} alt="MR ABU" className="w-8 h-8 rounded-full border-2 border-primary/50" />
               <span className="text-white font-bold text-lg">MR ABU</span>
             </div>
             
@@ -129,8 +129,8 @@ const App = React.memo(() => {
           <div className="container mx-auto max-w-6xl px-6">
             <div className="text-center space-y-3">
               {/* Profile with Hexagon */}
-              <div className="flex justify-center animate-fade-in-up mt-20">
-                <div className="relative p-8 overflow-hidden">
+              <div className="flex justify-center animate-fade-in-up mt-8">
+                <div className="relative p-4 overflow-hidden">
                   <Suspense fallback={<div className="w-32 h-32 bg-gray-800 rounded-full" style={{ display: 'none' }} />}>
                     <HexagonProfile
                       imageSrc={profileImg}
@@ -142,7 +142,7 @@ const App = React.memo(() => {
               </div>
 
               {/* Name & Title */}
-              <div className="space-y-2 -mt-8">
+              <div className="space-y-1 -mt-4">
                 <h1 className="text-xl md:text-2xl font-black text-white neon-text tracking-widest" data-text="MR ABU">
                   MR ABU
                 </h1>
@@ -155,8 +155,8 @@ const App = React.memo(() => {
               </div>
               
               {/* Subscriber Count & Stats */}
-              <div className="flex flex-wrap items-center justify-center gap-4 max-w-4xl mx-auto">
-                <div className="gaming-card p-6 text-center">
+              <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+                <div className="gaming-card p-4 text-center">
                   <div className="text-2xl md:text-3xl font-black gradient-text font-mono mb-2">
                     <Suspense fallback={<div className="h-8 w-24 rounded" style={{ display: 'none' }} />}>
                       <CountUp end={526863} decimals={0} duration={3500} />
