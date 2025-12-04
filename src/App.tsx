@@ -172,7 +172,7 @@ const App = React.memo(() => {
                   <div className="text-xs text-muted-foreground">Pakistan's Leading</div>
                 </div>
                 <div className="gaming-card p-3 text-center">
-                  <div className="text-lg font-bold text-white mb-1">3+ Years</div>
+                  <div className="text-lg font-bold text-white mb-1">5+ Years</div>
                   <div className="text-xs text-muted-foreground">Experience</div>
                 </div>
                 <div className="gaming-card p-3 text-center">
@@ -824,7 +824,7 @@ const App = React.memo(() => {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <a href="https://youtube.com/shorts/178gscrIpRc?si=ZLT2OcK-" target="_blank" rel="noopener noreferrer" className="group relative aspect-[9/16] rounded-2xl overflow-hidden transition-all duration-300 hover:scale-110 hover:rotate-1" style={{ border: '2px solid', borderImage: 'linear-gradient(135deg, #a855f7, #ec4899) 1' }}>
                 <img src={short1Img} alt="Viral Short" className="w-full h-full object-cover" />
                 
@@ -939,7 +939,7 @@ const App = React.memo(() => {
               </div>
 
               {/* Social Links */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-3xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12 max-w-3xl mx-auto">
                 <div className="group relative">
                   <a
                     href="mailto:btumer83@gmail.com?subject=Business Collaboration Inquiry&body=Hi MR ABU,%0D%0A%0D%0AI would like to discuss a potential collaboration opportunity.%0D%0A%0D%0ABest regards"
@@ -1025,8 +1025,8 @@ const App = React.memo(() => {
               </div>
 
               {/* Value Proposition */}
-              <div className="mt-16 p-10 bg-gray-800/60 border-2 border-purple-500/30 rounded-2xl">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+              <div className="mt-16 p-6 md:p-10 bg-gray-800/60 border-2 border-purple-500/30 rounded-2xl">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6">
                   <div className="flex items-center gap-3">
                     <Clock className="w-8 h-8 text-blue-500" />
                     <div>
