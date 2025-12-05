@@ -210,8 +210,8 @@ const App = React.memo(() => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <h1 className="text-3xl md:text-5xl font-black premium-title tracking-wider">
-                  MR ABU
+                <h1 className="text-xs font-normal tracking-normal">
+                  TINY TEST
                 </h1>
                 <p className="text-lg md:text-xl premium-tagline font-semibold">
                   Professional Gaming Creator & Free Fire Specialist
