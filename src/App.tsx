@@ -1,8 +1,12 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Eye, ThumbsUp, MessageCircle, Share2, Clock, TrendingUp, DollarSign, Users, Mail, Youtube, Instagram, MessageSquare, Target, Zap, Trophy, X, Globe, Calendar, Activity } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { LazyImage } from './components/LazyImage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
+import { useAnimatedCounter } from './hooks/useAnimatedCounter';
+import { useMagneticEffect } from './hooks/useMagneticEffect';
+import SubtleVideoBackground from './components/SubtleVideoBackground';
 
 // Lazy load components
 const ParticlesBackground = lazy(() => import('./components/ParticlesBackground').then(m => ({ default: m.ParticlesBackground })));
@@ -124,37 +128,22 @@ const App = React.memo(() => {
 
       
       <div className="relative z-10">
-        {/* Hero Section */}
+        {/* ORIGINAL HERO SECTION - BACKUP
         <section id="home" className="relative h-screen flex items-center justify-center px-4 py-16 pt-32">
           <div className="container mx-auto max-w-6xl px-6">
             <div className="text-center space-y-3">
-              {/* Profile with Hexagon */}
               <div className="flex justify-center animate-fade-in-up mt-8">
                 <div className="relative p-4 overflow-hidden">
                   <Suspense fallback={<div className="w-32 h-32 bg-gray-800 rounded-full" style={{ display: 'none' }} />}>
-                    <HexagonProfile
-                      imageSrc={profileImg}
-                      name="MR ABU"
-                      size="xl"
-                    />
+                    <HexagonProfile imageSrc={profileImg} name="MR ABU" size="xl" />
                   </Suspense>
                 </div>
               </div>
-
-              {/* Name & Title */}
               <div className="space-y-1 -mt-4">
-                <h1 className="text-xl md:text-2xl font-black text-white neon-text tracking-widest" data-text="MR ABU">
-                  MR ABU
-                </h1>
-                <p className="text-sm md:text-base text-muted-foreground font-medium">
-                  Professional Gaming Creator & Free Fire Specialist
-                </p>
-                <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto pt-1">
-                  Pakistan's leading <span className="text-primary font-semibold">Free Fire content creator</span> with a passion for competitive gaming and entertaining millions of viewers worldwide.
-                </p>
+                <h1 className="text-xl md:text-2xl font-black text-white neon-text tracking-widest" data-text="MR ABU">MR ABU</h1>
+                <p className="text-sm md:text-base text-muted-foreground font-medium">Professional Gaming Creator & Free Fire Specialist</p>
+                <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto pt-1">Pakistan's leading <span className="text-primary font-semibold">Free Fire content creator</span> with a passion for competitive gaming and entertaining millions of viewers worldwide.</p>
               </div>
-              
-              {/* Subscriber Count & Stats */}
               <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
                 <div className="gaming-card p-4 text-center">
                   <div className="text-2xl md:text-3xl font-black gradient-text font-mono mb-2">
@@ -162,11 +151,8 @@ const App = React.memo(() => {
                       <CountUp end={526863} decimals={0} duration={3500} />
                     </Suspense>
                   </div>
-                  <div className="text-primary uppercase tracking-widest text-sm font-bold">
-                    Subscribers
-                  </div>
+                  <div className="text-primary uppercase tracking-widest text-sm font-bold">Subscribers</div>
                 </div>
-                
                 <div className="gaming-card p-3 text-center">
                   <div className="text-lg font-bold text-white mb-1">Top Creator</div>
                   <div className="text-xs text-muted-foreground">Pakistan's Leading</div>
@@ -180,15 +166,163 @@ const App = React.memo(() => {
                   <div className="text-xs text-muted-foreground">Expert</div>
                 </div>
               </div>
-              
-              {/* CTA Button */}
               <div className="pt-4 relative z-20">
                 <a href="https://www.youtube.com/@mrabu1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:scale-105 transition-all duration-300 cursor-pointer">
-                  <Youtube className="w-5 h-5" />
-                  Watch My Content
+                  <Youtube className="w-5 h-5" />Watch My Content
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+        END ORIGINAL */}
+
+        {/* Premium Industry-Leading Hero Section */}
+        <section id="home" className="relative h-screen flex items-center justify-center px-4 py-16 pt-32 premium-gradient-mesh overflow-hidden">
+
+          <div className="container mx-auto max-w-6xl px-6 relative z-10">
+            <motion.div 
+              className="text-center space-y-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              {/* 3D Floating Profile Card */}
+              <div className="flex justify-center mt-8">
+                <motion.div 
+                  className="floating-profile-card p-8 rounded-3xl relative"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  <Suspense fallback={<div className="w-32 h-32 bg-gray-800 rounded-full" style={{ display: 'none' }} />}>
+                    <HexagonProfile
+                      imageSrc={profileImg}
+                      name="MR ABU"
+                      size="xl"
+                    />
+                  </Suspense>
+                </motion.div>
+              </div>
+
+              {/* Premium Typography */}
+              <motion.div 
+                className="space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <h1 className="text-3xl md:text-5xl font-black premium-title tracking-wider">
+                  ⚡ MR ABU ⚡
+                </h1>
+                <p className="text-lg md:text-xl premium-tagline font-semibold">
+                  Professional Gaming Creator & Free Fire Specialist
+                </p>
+                <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  Pakistan's leading <span className="text-[#FFD700] font-bold">Elite Free Fire</span> content creator with a passion for competitive gaming and entertaining millions of viewers worldwide.
+                </p>
+              </motion.div>
+              
+              {/* Premium Stat Cards with Animated Counters */}
+              <motion.div 
+                className="flex flex-wrap items-center justify-center gap-6 max-w-5xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <motion.div 
+                  className="premium-stat-card p-6 text-center rounded-2xl min-w-[140px]"
+                  whileHover={{ 
+                    y: -8,
+                    boxShadow: '0 15px 40px rgba(0,255,255,0.3)'
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="text-3xl md:text-4xl font-black text-[#00ffff] font-mono mb-2">
+                    {useAnimatedCounter(526863, 2500).toLocaleString()}
+                  </div>
+                  <div className="text-[#00ffff] uppercase tracking-widest text-sm font-bold">
+                    Subscribers
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  className="premium-stat-card p-6 text-center rounded-2xl min-w-[140px]"
+                  whileHover={{ 
+                    y: -8,
+                    boxShadow: '0 15px 40px rgba(255,0,255,0.3)'
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="text-2xl font-bold text-white mb-2">{useAnimatedCounter(73800000, 3000).toLocaleString()}</div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wide">Total Views</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="premium-stat-card p-6 text-center rounded-2xl min-w-[140px]"
+                  whileHover={{ 
+                    y: -8,
+                    boxShadow: '0 15px 40px rgba(139,92,246,0.3)'
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="text-2xl font-bold text-white mb-2">{useAnimatedCounter(5, 1500)}+</div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wide">Years Experience</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="premium-stat-card p-6 text-center rounded-2xl min-w-[140px]"
+                  whileHover={{ 
+                    y: -8,
+                    boxShadow: '0 15px 40px rgba(255,215,0,0.3)'
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="text-2xl font-bold text-[#FFD700] mb-2">Elite</div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wide">Gaming Expert</div>
+                </motion.div>
+              </motion.div>
+              
+              {/* Magnetic CTA Button */}
+              <motion.div 
+                className="pt-8 relative z-20"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                {(() => {
+                  const { elementRef, position, handleMouseMove, handleMouseLeave } = useMagneticEffect(0.2);
+                  const [rippleActive, setRippleActive] = useState(false);
+                  
+                  return (
+                    <motion.a 
+                      ref={elementRef as any}
+                      href="https://www.youtube.com/@mrabu1" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className={`magnetic-button inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#8B5CF6] via-[#00ffff] to-[#ec4899] text-white font-bold text-lg rounded-xl transition-all duration-300 cursor-pointer ${rippleActive ? 'ripple' : ''}`}
+                      style={{
+                        transform: `translate(${position.x}px, ${position.y}px)`,
+                        boxShadow: '0 10px 30px rgba(0,255,255,0.4), 0 0 0 1px rgba(255,255,255,0.1)'
+                      }}
+                      onMouseMove={handleMouseMove}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={() => {
+                        setRippleActive(true);
+                        setTimeout(() => setRippleActive(false), 600);
+                      }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        boxShadow: '0 15px 40px rgba(0,255,255,0.6), 0 0 0 1px rgba(255,255,255,0.2)'
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Youtube className="w-6 h-6" />
+                      Watch My Content
+                    </motion.a>
+                  );
+                })()}
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 

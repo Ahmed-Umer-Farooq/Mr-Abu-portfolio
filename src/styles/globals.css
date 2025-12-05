@@ -501,3 +501,260 @@ html {
   animation: float-particles 6s infinite ease-in-out;
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
 }
+
+/* Cyberpunk Hero Styles */
+.cyberpunk-hero {
+  background: linear-gradient(135deg, #0a0015 0%, #1a0030 50%, #2d1b69 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.glassmorphism {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.neon-text-glow {
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    0 0 40px #00ffff;
+  color: #ffffff;
+}
+
+.neon-button {
+  background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1));
+  border: 2px solid #00ffff;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ffff;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.neon-button:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.5),
+    0 0 60px rgba(0, 255, 255, 0.3),
+    inset 0 0 30px rgba(0, 255, 255, 0.2);
+  border-color: #ff00ff;
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #ff00ff;
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+.gradient-border {
+  border-image: linear-gradient(45deg, #00ffff, #ff00ff) 1;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cyberpunk-card {
+  background: rgba(10, 0, 21, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunk-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(255, 0, 255, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.cyberpunk-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes cyber-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(0, 255, 255, 0.3),
+      0 0 40px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(0, 255, 255, 0.5),
+      0 0 60px rgba(0, 255, 255, 0.2);
+  }
+}
+
+.cyber-pulse {
+  animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.matrix-char {
+  position: absolute;
+  color: #00ffff;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  animation: matrix-rain 3s linear infinite;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Premium gradient mesh background */
+.premium-gradient-mesh {
+  background: linear-gradient(125deg, 
+    #0a0015 0%, 
+    #1a0530 25%, 
+    #0d1b3e 50%, 
+    #1a0530 75%, 
+    #0a0015 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* 3D floating profile card */
+.floating-profile-card {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 255, 255, 0.15),
+    0 2px 8px rgba(255, 0, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.floating-profile-card:hover {
+  transform: perspective(1000px) rotateY(2deg) translateY(-5px);
+  box-shadow: 
+    0 20px 60px rgba(0, 255, 255, 0.25),
+    0 8px 20px rgba(255, 0, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Premium text effects */
+.premium-title {
+  background: linear-gradient(90deg, #ffffff 0%, #00ffff 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.premium-tagline {
+  letter-spacing: 0.15em;
+  color: #00ffff;
+}
+
+/* Magnetic button effect */
+.magnetic-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.magnetic-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.magnetic-button.ripple::before {
+  animation: ripple 0.6s linear;
+}
+
+
+
+/* Enhanced stat cards */
+.premium-stat-card {
+  backdrop-filter: blur(15px) saturate(150%);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.premium-stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 255, 255, 0.3);
+  border-color: rgba(255, 215, 0, 0.4);
+}
