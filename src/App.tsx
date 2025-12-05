@@ -211,7 +211,7 @@ const App = React.memo(() => {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <h1 className="text-3xl md:text-5xl font-black premium-title tracking-wider">
-                  ⚡ MR ABU ⚡
+                  MR ABU
                 </h1>
                 <p className="text-lg md:text-xl premium-tagline font-semibold">
                   Professional Gaming Creator & Free Fire Specialist
