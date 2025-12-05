@@ -761,9 +761,9 @@ html {
 
 /* Hero section sizing fixes */
 .hero-section {
-  max-height: 200px;
-  min-height: 200px;
-  padding: 1rem;
+  max-height: 80vh;
+  min-height: 500px;
+  padding: 6rem 1rem 2rem;
 }
 
 .profile-hexagon {
