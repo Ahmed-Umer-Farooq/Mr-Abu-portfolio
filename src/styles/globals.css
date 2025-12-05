@@ -760,6 +760,7 @@ html {
 }
 
 /* Hero section sizing fixes */
+/* Force GitHub Pages Update */
 .hero-section {
   max-height: 60vh;
   min-height: 300px;
