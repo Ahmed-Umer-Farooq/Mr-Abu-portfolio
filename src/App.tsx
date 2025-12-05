@@ -5,7 +5,6 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { LazyImage } from './components/LazyImage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { useAnimatedCounter } from './hooks/useAnimatedCounter';
-import { useMagneticEffect } from './hooks/useMagneticEffect';
 import SubtleVideoBackground from './components/SubtleVideoBackground';
 
 // Lazy load components
@@ -177,7 +176,7 @@ const App = React.memo(() => {
         END ORIGINAL */}
 
         {/* Premium Industry-Leading Hero Section */}
-        <section id="home" className="relative h-screen flex items-center justify-center px-4 py-16 pt-32 premium-gradient-mesh overflow-hidden">
+        <section id="home" className="hero-section relative flex items-center justify-center premium-gradient-mesh overflow-hidden">
 
           <div className="container mx-auto max-w-6xl px-6 relative z-10">
             <motion.div 
@@ -189,7 +188,7 @@ const App = React.memo(() => {
               {/* 3D Floating Profile Card */}
               <div className="flex justify-center mt-8">
                 <motion.div 
-                  className="floating-profile-card p-8 rounded-3xl relative"
+                  className="floating-profile-card profile-hexagon p-8 rounded-3xl relative"
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -282,45 +281,24 @@ const App = React.memo(() => {
                 </motion.div>
               </motion.div>
               
-              {/* Magnetic CTA Button */}
+              {/* Watch My Content Button */}
               <motion.div 
                 className="pt-8 relative z-20"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                {(() => {
-                  const { elementRef, position, handleMouseMove, handleMouseLeave } = useMagneticEffect(0.2);
-                  const [rippleActive, setRippleActive] = useState(false);
-                  
-                  return (
-                    <motion.a 
-                      ref={elementRef as any}
-                      href="https://www.youtube.com/@mrabu1" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className={`magnetic-button inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#8B5CF6] via-[#00ffff] to-[#ec4899] text-white font-bold text-lg rounded-xl transition-all duration-300 cursor-pointer ${rippleActive ? 'ripple' : ''}`}
-                      style={{
-                        transform: `translate(${position.x}px, ${position.y}px)`,
-                        boxShadow: '0 10px 30px rgba(0,255,255,0.4), 0 0 0 1px rgba(255,255,255,0.1)'
-                      }}
-                      onMouseMove={handleMouseMove}
-                      onMouseLeave={handleMouseLeave}
-                      onClick={() => {
-                        setRippleActive(true);
-                        setTimeout(() => setRippleActive(false), 600);
-                      }}
-                      whileHover={{ 
-                        scale: 1.05,
-                        boxShadow: '0 15px 40px rgba(0,255,255,0.6), 0 0 0 1px rgba(255,255,255,0.2)'
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Youtube className="w-6 h-6" />
-                      Watch My Content
-                    </motion.a>
-                  );
-                })()}
+                <motion.a 
+                  href="https://www.youtube.com/@mrabu1" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="watch-content-btn inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#8B5CF6] to-[#ec4899] text-white font-bold text-lg rounded-xl transition-all duration-300 cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Youtube className="w-6 h-6" />
+                  Watch My Content
+                </motion.a>
               </motion.div>
             </motion.div>
           </div>

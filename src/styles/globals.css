@@ -758,3 +758,28 @@ html {
   box-shadow: 0 15px 40px rgba(0, 255, 255, 0.3);
   border-color: rgba(255, 215, 0, 0.4);
 }
+
+/* Hero section sizing fixes */
+.hero-section {
+  max-height: 100vh;
+  min-height: 600px;
+  padding: 2rem 1rem;
+}
+
+.profile-hexagon {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+}
+
+/* Button visibility fixes */
+.watch-content-btn {
+  display: inline-flex !important;
+  background: linear-gradient(90deg, #8B5CF6, #EC4899) !important;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  margin-top: 2rem;
+  opacity: 1 !important;
+  visibility: visible !important;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
